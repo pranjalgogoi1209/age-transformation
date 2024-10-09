@@ -1,0 +1,29 @@
+.OutputPage {
+  /* border: 1px solid black; */
+  /* justify-content: flex-start !important; */
+  .loaderContainer {
+    gap: 10vh;
+    width: 70vw;
+  }
+  .generatedImgContainer {
+    /* border: 2px solid red; */
+    gap: 1vh;
+    .imgContainer {
+      width: 32vh;
+      /* border-radius: 2vw; */
+      /* overflow: hidden; */
+      /* border: 0.5vw solid black; */
+    }
+    .btnContainer {
+      gap: 1vh;
+    }
+  }
+}
+
+@media print {
+  .generatedImage {
+    page-break-inside: avoid;
+    max-width: 100%;
+    height: auto;
+  }
+}

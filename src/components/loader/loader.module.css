@@ -1,0 +1,21 @@
+.Loader {
+  width: 60vw;
+  height: 10vw;
+  display: inline-block;
+  position: relative;
+  border: 0.6vw solid var(--themeColor2);
+  border-radius: 2vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 1%;
+  gap: 1%;
+  margin: auto;
+  overflow: hidden;
+  .line {
+    background-color: var(--themeColor2);
+    height: 90%;
+    width: 1.7%;
+    animation: animloader 1s linear infinite;
+  }
+}
