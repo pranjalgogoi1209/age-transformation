@@ -57,7 +57,6 @@ export default function CameraPage({ setCapturedImg }) {
     if (img) {
       setCapturedImg(img);
       navigate("/output");
-      console.log(img, "image data");
     } else {
       toast.error("Please capture your image", toastOptions);
     }

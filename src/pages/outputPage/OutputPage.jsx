@@ -9,23 +9,19 @@ export default function OutputPage({ capturedImg }) {
   const [generatedImg, setGeneratedImg] = useState("");
   const navigate = useNavigate();
 
-  console.log(capturedImg.split(",")[1]);
-
   useEffect(() => {
     const generateImage = async () => {
       if (capturedImg) {
-        const imagebase64 = `data:application/octet-stream;base64,${
-          capturedImg.split(",")[1]
-        }`;
-
-        console.log(imagebase64);
+        console.log("api calling started");
 
         try {
           const response = await axios.post(
             "https://age-transform-server.onrender.com/age-transform",
-            { image: imagebase64, target_age: "54" }
+            { image: capturedImg, target_age: "54" }
           );
+
           console.log(response);
+          console.log(response.data.url);
 
           setGeneratedImg(response.data.url);
         } catch (error) {
