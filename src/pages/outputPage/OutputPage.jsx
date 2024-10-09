@@ -9,6 +9,8 @@ export default function OutputPage({ capturedImg }) {
   const [generatedImg, setGeneratedImg] = useState("");
   const navigate = useNavigate();
 
+  console.log(capturedImg.split(",")[1]);
+
   useEffect(() => {
     const generateImage = async () => {
       if (capturedImg) {
@@ -17,7 +19,7 @@ export default function OutputPage({ capturedImg }) {
         try {
           const response = await axios.post(
             "https://age-transform-server.onrender.com/age-transform",
-            { image: capturedImg, target_age: "54" }
+            { image: capturedImg.split(",")[1], target_age: "54" }
           );
 
           console.log(response);
